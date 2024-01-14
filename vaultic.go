@@ -4,6 +4,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/smxlong/vaultic/server"
+	"github.com/smxlong/vaultic/version"
 )
 
 // Vaultic is the vaultic application.
@@ -28,6 +29,6 @@ func (v *Vaultic) Command() *cobra.Command {
 			return s.Run()
 		},
 	}
-	cmd.AddCommand(versionCommand())
+	cmd.AddCommand(version.VersionCommand())
 	return cmd
 }

@@ -1,4 +1,4 @@
-package vaultic
+package version
 
 import (
 	"fmt"
@@ -6,10 +6,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
-const Version = "0.0.1"
+const Version = "0.1.0"
 
 // versionCommand returns the version command.
-func versionCommand() *cobra.Command {
+func VersionCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "version",
 		Short: "Display version",
