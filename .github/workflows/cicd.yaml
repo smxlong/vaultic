@@ -47,7 +47,7 @@ jobs:
         with:
           images: smxlong/vaultic
           tags: |
-            type=sha,format=long
+            type=sha,format=long,prefix=
             type=ref,event=branch
             type=ref,event=tag
       - uses: docker/build-push-action@v5
@@ -57,3 +57,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ steps.metadata.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
