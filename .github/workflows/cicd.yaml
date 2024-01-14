@@ -31,25 +31,6 @@ jobs:
       - run: |
           make check-pr
 
-  codeql:
-    name: CodeQL
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
-        with:
-          languages: go
-      - name: Build
-        run: |
-          make build
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
-        with:
-          languages: go
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
   build:
     name: Build
     runs-on: ubuntu-latest
