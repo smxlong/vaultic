@@ -1,3 +1,7 @@
+# Copyright 2024 Scott Long
+#
+# SPDX-License-Identifier: MIT
+
 FROM golang:1.21.5 AS builder
 
 WORKDIR /src

@@ -1,3 +1,7 @@
+// Copyright 2024 Scott Long
+//
+// SPDX-License-Identifier: MIT
+
 package vaultic
 
 import (

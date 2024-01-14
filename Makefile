@@ -1,3 +1,7 @@
+# Copyright 2024 Scott Long
+#
+# SPDX-License-Identifier: MIT
+
 .PHONY: check
 check: fmt vet lint test
 
