@@ -1,11 +1,16 @@
+# Copyright 2024 Scott Long
+#
+# SPDX-License-Identifier: MIT
+
 .PHONY: check
 check: fmt vet lint test
 
 .PHONY: check-pr
 check-pr: check
-	@echo ">> checking pull request"
-	@git fetch origin main
-	@! git diff --exit-code origin/main..HEAD version.go || (echo "Version number has not been updated"; exit 1)
+	echo ">> checking pull request"
+	git fetch origin main
+	! git diff --exit-code origin/main..HEAD version/version.go || (echo "Version number has not been updated"; exit 1)
+	grep -q "## v$$(grep -oP '(?<=Version = ").*(?=")' version/version.go)" CHANGELOG.md || (echo "Changelog has not been updated"; exit 1)
 
 .PHONY: fmt
 fmt: generate

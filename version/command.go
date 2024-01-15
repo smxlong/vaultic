@@ -1,4 +1,8 @@
-package vaultic
+// Copyright 2024 Scott Long
+//
+// SPDX-License-Identifier: MIT
+
+package version
 
 import (
 	"fmt"
@@ -6,10 +10,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-const Version = "0.0.1"
-
-// versionCommand returns the version command.
-func versionCommand() *cobra.Command {
+// VersionCommand returns the version command.
+func VersionCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "version",
 		Short: "Display version",
